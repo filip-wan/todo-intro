@@ -23,7 +23,7 @@ function AddTask() {
                         onChange={e => setTask(e.target.value)}
                     />
                     <Button className="ml-3 btn-lg p-0 pr-2 pl-2" type="submit">
-                        <i class="fas fa-plus"></i>
+                        <i className="fas fa-plus"></i>
                     </Button>
                 </Form>
             </ListGroupItem>

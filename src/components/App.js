@@ -1,6 +1,6 @@
 import React from 'react';
 import ToDoList from './ToDoList';
-import TasksContext, { TasksProvider } from '../contexts/TasksContext';
+import { TasksProvider } from '../contexts/TasksContext';
 
 function App() {
     return (

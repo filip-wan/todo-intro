@@ -3,23 +3,24 @@ import React, { createContext, useState } from 'react';
 const TasksContext = createContext([]);
 
 export const TasksProvider = props => {
-    const [tasks, setTasks] = useState([
-        { id: 0, text: 'Do laundry', checked: false },
-        { id: 1, text: 'Do dishes', checked: true },
-        { id: 2, text: 'Run a lot', checked: false }
-    ]);
+    const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks') || []));
+
+    const saveTasks = tasks => {
+        setTasks(tasks);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    };
 
     const addTask = taskText => {
         const newId = tasks.length === 0 ? 0 : tasks[tasks.length - 1].id + 1;
-        setTasks([...tasks, { id: newId, text: taskText, checked: false }]);
+        saveTasks([...tasks, { id: newId, text: taskText, checked: false }]);
     };
 
     const removeTask = taskId => {
-        setTasks(tasks.filter(t => t.id !== taskId));
+        saveTasks(tasks.filter(t => t.id !== taskId));
     };
 
     const taskChecked = (taskId, checked) => {
-        setTasks(tasks.map(t => (t.id === taskId ? { ...t, checked: checked } : t)));
+        saveTasks(tasks.map(t => (t.id === taskId ? { ...t, checked: checked } : t)));
     };
 
     return (

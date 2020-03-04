@@ -13,7 +13,7 @@ function Tasks() {
                         checked={t.checked}
                         onChange={e => taskChecked(t.id, e.target.checked)}
                     />
-                    {t.text}
+                    {t.checked ? <del>{t.text}</del> : t.text}
                     <Button className="close" onClick={e => removeTask(t.id)}>
                         <span>X</span>
                     </Button>
