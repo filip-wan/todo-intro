@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Tasks from './Tasks';
 import AddTask from './AddTask';
 
