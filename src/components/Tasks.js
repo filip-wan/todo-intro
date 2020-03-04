@@ -1,23 +1,14 @@
 import React from 'react';
-import { ListGroup, ListGroupItem, Form, Button } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 import TasksContext from '../contexts/TasksContext';
+import Task from './Task';
 
 function Tasks() {
-    const { tasks, taskChecked, removeTask } = React.useContext(TasksContext);
+    const { tasks } = React.useContext(TasksContext);
     return (
         <ListGroup className="mb-3">
             {tasks.map(t => (
-                <ListGroupItem key={t.id} className="pl-5">
-                    <Form.Check.Input
-                        inline="true"
-                        checked={t.checked}
-                        onChange={e => taskChecked(t.id, e.target.checked)}
-                    />
-                    {t.checked ? <del>{t.text}</del> : t.text}
-                    <Button className="close" onClick={e => removeTask(t.id)}>
-                        <span>X</span>
-                    </Button>
-                </ListGroupItem>
+                <Task key={t.id} task={t} />
             ))}
         </ListGroup>
     );
