@@ -7,7 +7,7 @@ function Tasks() {
     return (
         <ListGroup className="mb-3">
             {tasks.map(t => (
-                <ListGroupItem key={t.id}>
+                <ListGroupItem key={t.id} className="pl-5">
                     <Form.Check.Input
                         inline="true"
                         checked={t.checked}

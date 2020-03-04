@@ -10,7 +10,7 @@ export const TasksProvider = props => {
     ]);
 
     const addTask = taskText => {
-        const newId = tasks[tasks.length - 1].id + 1;
+        const newId = tasks.length === 0 ? 0 : tasks[tasks.length - 1].id + 1;
         setTasks([...tasks, { id: newId, text: taskText, checked: false }]);
     };
 

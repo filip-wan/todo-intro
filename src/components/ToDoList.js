@@ -5,7 +5,7 @@ import AddTask from './AddTask';
 
 function ToDoList() {
     return (
-        <Container className="text-center border border-light">
+        <Container>
             <AddTask />
             <Tasks />
         </Container>
