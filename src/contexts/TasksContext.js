@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 const TasksContext = createContext([]);
 
 export const TasksProvider = props => {
-    const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks') || []));
+    const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
 
     const saveTasks = tasks => {
         setTasks(tasks);
