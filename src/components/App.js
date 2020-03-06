@@ -1,11 +1,16 @@
 import React from 'react';
-import ToDoList from './ToDoList';
+import { Container } from 'react-bootstrap';
+import Tasks from './Tasks';
+import AddTask from './AddTask';
 import { TasksProvider } from '../contexts/TasksContext';
 
 function App() {
     return (
         <TasksProvider>
-            <ToDoList />
+            <Container>
+                <AddTask />
+                <Tasks />
+            </Container>
         </TasksProvider>
     );
 }
