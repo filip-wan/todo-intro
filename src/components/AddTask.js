@@ -8,7 +8,8 @@ function AddTask() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        if (task !== '') addTask(task);
+        if (task === '') return;
+        addTask(task);
         setTask('');
     };
 
@@ -22,8 +23,8 @@ function AddTask() {
                         value={task}
                         onChange={e => setTask(e.target.value)}
                     />
-                    <Button className="ml-3 btn-lg p-0 pr-2 pl-2" type="submit">
-                        <i className="fas fa-plus"></i>
+                    <Button className="btn-lg ml-3 p-0" type="submit">
+                        <i className="fas fa-plus mr-2 ml-2" />
                     </Button>
                 </Form>
             </ListGroupItem>

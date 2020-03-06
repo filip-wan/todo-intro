@@ -6,7 +6,7 @@ import Task from './Task';
 function Tasks() {
     const { tasks } = React.useContext(TasksContext);
     return (
-        <ListGroup className="mb-3">
+        <ListGroup>
             {tasks.map(t => (
                 <Task key={t.id} task={t} />
             ))}

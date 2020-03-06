@@ -8,13 +8,9 @@ function Task(props) {
 
     return (
         <ListGroupItem className="pl-5">
-            <Form.Check.Input
-                inline="true"
-                checked={task.checked}
-                onChange={e => taskChecked(task.id, e.target.checked)}
-            />
+            <Form.Check.Input checked={task.checked} onChange={e => taskChecked(task.id, e.target.checked)} />
             {task.checked ? <del>{task.text}</del> : task.text}
-            <Button className="close" onClick={e => removeTask(task.id)}>
+            <Button className="close" onClick={() => removeTask(task.id)}>
                 <span>X</span>
             </Button>
         </ListGroupItem>
